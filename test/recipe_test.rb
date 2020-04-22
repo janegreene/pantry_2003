@@ -22,13 +22,16 @@ class RecipeTest < Minitest::Test
   end
 
   def test_it_can_add_ingredient
-    @recipe1.add_ingredient(ingredient1, 2)
-    @recipe1.add_ingredient(ingredient1, 4)
-    @recipe1.add_ingredient(ingredient2, 8)
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
     assert_equal ({@ingredient1 => 6, @ingredient2 => 8}), @recipe1.ingredients_required
   end
 
   def test_it_can_return_ingredients
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
     assert_equal [@ingredient1, @ingredient2], @recipe1.ingredients
   end
 end
