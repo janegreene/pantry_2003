@@ -21,6 +21,8 @@ class CookBook
   end
 
   def highest_calorie_meal
-    require "pry"; binding.pry
+    @recipes.max_by do |recipe|
+      recipe.total_calories
+    end
   end
 end
