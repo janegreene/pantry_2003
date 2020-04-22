@@ -9,4 +9,12 @@ class Pantry
     @stock[ingredient]
   end
 
+  def restock(ingredient, amount)
+    if @stock.key?(ingredient)
+      @stock[ingredient] += amount
+    else
+      @stock[ingredient] = amount
+    end
+  end
+
 end
